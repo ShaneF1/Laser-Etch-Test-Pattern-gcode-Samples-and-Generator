@@ -16,7 +16,7 @@ The gcode samples provided produce an 8x8 grid of 5mm squares at 0.1mm line spac
 
 Note that if creating your own gcode, the power levels can be described as positive values which map to a M3 gcode command or negative values which map to an M4 gcode command. I find the M4 gcode command more useful and indicative as M4 will have your grbl controller dynamically scale laser power in response to the dynamics of your machine movement. The gcode samples provided use negative power values and M4 commands.
 
-The code constructs the gcode test pattern starting at the highest speed and progressively higher power. In practice I wanted to use the highest speed and lowest power level to achieve a result. These patterns are etched first so the etch can be truncated if the needed results are provided early.
+The code constructs the gcode test pattern starting at the highest speed and progressively higher power. In practice I wanted to use the highest speed and lowest power level to achieve a result. These patterns are etched first (right to left) so the etch can be truncated if the needed results are provided early.
 
 ## Examples:
 
