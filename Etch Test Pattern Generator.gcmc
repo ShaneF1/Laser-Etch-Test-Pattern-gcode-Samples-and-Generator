@@ -1,0 +1,146 @@
+/* Author: Shane Finn */
+/* GPLv3 - free for public use */
+/* Compilation requires gCode Meta Compiler by Vagrearg */
+/* https://www.vagrearg.org/content/gcmc */
+
+/* This code creates gCode for a CNC laser test pattern to help determine the appropriate speed and power levels for a given etching task */
+/* Probably best compiled with the -q option to exclude headers and allow CNC current settings to apply */
+
+include("engrave.inc.gcmc");
+
+/* creates gCode for labelled array of filled boxes with varying speed and power using CNC laser */
+function FilledBoxArray(rows,cols,min_speed,max_speed,min_power,max_power,dx,dy,y_step)
+{
+  /* choose units externally */
+  /* rows,cols = number of steps in each array direction */
+  /* rows = power axis */
+  /* cols = speed axis */
+  /* set power <0 for M4 speed dependent laser */
+  /* dx,dy = box dimensions */
+  /* y_step = line spacing of adjacent laser passes */
+
+  /* interbox gap as proportion of dx,dy */
+  gap=0.5;
+
+  /* text scaling vs dx,dy */
+  text_scale=0.9;
+
+  /* sanity check */
+  if (max_speed<min_speed) {max_speed=min_speed;}
+  if (max_power*min_power<0) {max_power=min_power;}
+
+  /* write legend labels */
+  text = typeset("Power",FONT_HSANS_1);
+  text = scale(text,[dx*text_scale,dy*text_scale]);
+  text = rotate_xy(text,90deg);
+  text += [(cols+2)*dx*(1+gap)+dx,0];
+  LaserText(text,(max_speed+min_speed)/2,(max_power+min_power/2));  
+
+  text = typeset("Feedrate",FONT_HSANS_1);
+  text = scale(text,[dx*text_scale,dy*text_scale]);
+  text += [0,(rows+2)*dy*(1+gap)];
+  LaserText(text,(max_speed+min_speed)/2,(max_power+min_power/2));  
+
+  /* creates array of filled boxes with labels */
+  repeat (cols;rx)
+  {
+    x = cols - rx + 1; /* reverse x mapping to have high feedrate col next to y legend */
+    if (cols>1)
+      {speed = to_int((x-1)/to_float(cols-1)*(max_speed-min_speed)+min_speed);}
+    else
+      {speed = min_speed;}
+
+    repeat (rows;y)
+    {
+      if (rows>1)
+        {power = to_int((y-1)/to_float(rows-1)*(max_power-min_power)+min_power);}
+      else
+        {power = min_power;}
+
+      FilledBox((x-1)*dx*(1+gap),(y-1)*dy*(1+gap),speed,power,dx,dy,y_step);
+
+      /* write row labels */
+      if (x==cols)
+      {
+        text = typeset(to_string(abs(power)),FONT_HSANS_1);
+        text = scale(text,[dx*text_scale,dy*text_scale]);
+        text += [cols*dx*(1+gap),(y-1)*dy*(1+gap)];    
+        LaserText(text,(max_speed+min_speed)/2,(max_power+min_power/2));  
+      }
+    }
+
+    /* write col labels */
+    if (y==rows)
+    {
+      text = typeset(to_string(speed),FONT_HSANS_1);
+      text = scale(text,[dx*text_scale,dy*text_scale]);
+      text = rotate_xy(text,90deg);
+      text += [(x-1)*dx*(1+gap)+dx,rows*dy*(1+gap)];
+      LaserText(text,(max_speed+min_speed)/2,(max_power+min_power/2));  
+    }
+  }
+}
+
+/* creates gCode for text using CNC laser */
+function LaserText(text,speed,power)
+{
+  /* set feedrate and power */
+  feedrate(speed);
+  spindle(power);
+
+  /* interpret strokes data structure for laser */
+  foreach (text;v)
+  {
+    if (!isundef(v.z)) {up = to_none(v.z) > 0.0;}
+    else
+    {
+      if (up) {goto(v);}
+      else {move(v);}
+    }
+  }
+  /* laser off */
+  spindle(0);
+}
+
+/* creates gCode for single filled box using CNC laser */
+function FilledBox(x,y,speed,power,dx,dy,y_step)
+{
+  /* x,y = location of lower left box corner */
+  /* speed = G1 feedrate */
+  /* set power <0 for M4 speed dependent laser */
+  /* dx,dy = box dimensions */
+  /* y_step = line spacing of adjacent laser passes */
+
+  /* sanity check */
+  if (dx<0) {dx = -dx;}
+  if (dy<0) {dy = -dy;}
+  if (y_step<=0) {y_step = 0.1;}
+
+  /* initialise */
+  feedrate(speed);
+  goto([x,-]);
+  spindle(power);
+
+  lefttoright = 1;
+  delta_y = 0;
+  while (delta_y <= dy)
+  {
+    /* prepare pass */
+    goto([-,y+delta_y]);
+
+    /* move in bidirectional passes */
+    if (lefttoright>0)
+      { move([x+dx,-]); }
+    else
+      { move([x,-]); };
+    lefttoright = -lefttoright;
+
+    /* increase Y side of box */
+    delta_y += y_step;
+  }
+  /* laser off */
+  spindle(0);
+}
+
+/* creates gCode for CNC laser etch test pattern with varying speed and power */
+FilledBoxArray(8,8,100,1000,-250,-1000,5,5,0.1);

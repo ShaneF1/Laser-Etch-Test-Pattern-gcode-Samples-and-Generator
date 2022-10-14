@@ -1,0 +1,1 @@
+gcmc -I library -q "Etch Test Pattern Generator.gcmc" > "Etch Test.nc"
