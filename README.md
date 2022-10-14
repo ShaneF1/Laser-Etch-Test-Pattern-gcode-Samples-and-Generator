@@ -8,7 +8,7 @@ So I did what any frustrated engineer would do. I overcompensated.
 
 ## Solution
 
-In searching for g-code constructors I found "gcmc - G-Code Meta Compiler" by Vagrearg at https://www.vagrearg.org/content/gcmc. This stroke of genius compiler is a simple download having no installation requirements. So here is the g-code generator I wrote to produce the test patterns and the more useful actual "just the  g-code" samples I have been using regularly. If you need test patterns with different behaviours the g-code generator is hopefully documented well enough that you can easily create your own g-code.
+In searching for g-code constructors I found "gcmc - G-Code Meta Compiler" by Vagrearg at https://www.vagrearg.org/content/gcmc. This stroke of genius compiler is a simple download having no installation requirements. So here is the g-code generator I wrote to create the test patterns and the more useful actual "just the  g-code" samples I have been using regularly. If you need test patterns with different behaviours the g-code generator is hopefully documented well enough that you can easily create your own g-code.
 
 ## g-code Samples
 
