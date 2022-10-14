@@ -14,7 +14,7 @@ In searching for gcode constructors I found "gcmc - G-Code Meta Compiler" by Vag
 
 The gcode samples provided produce an 8x8 grid of 5mm squares at 0.1mm line spacing with varying speed and power levels and fit inside a 90mm square test pattern. All the samples provided scale the speed "x" axis from 100mm/min to 1000mm/min. The various samples scale the power "Y" axis from 10 to 125, 50 to 250, 125 to 500 and 250 to 1000 as described in their titles. The 1000 power value equates to 100% laser power in my machine.
 
-## Code Generator
+## gCode Generator
 
 The code generator constructs the gcode test pattern starting at the highest speed and progressively higher power. In practice I wanted to use the highest speed and lowest power level to achieve a result. These speed/power patterns are etched first (right to left) so the etch can be truncated if the needed results are provided early. The code provides easy adjustment of row/col count, line spacing, box size, min/max speed and min/max power.
 
