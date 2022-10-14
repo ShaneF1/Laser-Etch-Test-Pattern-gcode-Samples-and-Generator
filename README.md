@@ -12,11 +12,11 @@ In searching for gcode constructors I found "gcmc - G-Code Meta Compiler" by Vag
 
 ## Code and gCode
 
-The gcode samples provided produce an 8x8 grid of 5mm squares at 0.1mm line spacing with varying speed and power levels and fit inside a 90mm square test pattern. All the samples provided scale the speed "x" axis from 100mm/min to 1000mm/min. The various code samples scale the power "Y" axis from 10 to 125, 50 to 250, 125 to 500 and 250 to 1000 as described in their titles. The 1000 power value equates to 100% laser power in my machine.
+The gcode samples provided produce an 8x8 grid of 5mm squares at 0.1mm line spacing with varying speed and power levels and fit inside a 90mm square test pattern. All the samples provided scale the speed "x" axis from 100mm/min to 1000mm/min. The various code samples scale the power "Y" axis from 10 to 125, 50 to 250, 125 to 500 and 250 to 1000 as described in their titles. The 1000 power value equates to 100% laser power in my machine. The code provides easy adjustment of row/col count, line spacing, box size, min/max speed and min/max power.
 
 Note that if creating your own gcode, the power levels can be described as positive values which map to a M3 gcode command or negative values which map to an M4 gcode command. I find the M4 gcode command more useful and indicative as M4 will have your grbl controller dynamically scale laser power in response to the dynamics of your machine movement. The gcode samples provided use negative power values and M4 commands.
 
-The code constructs the gcode test pattern starting at the highest speed and progressively higher power. In practice I wanted to use the highest speed and lowest power level to achieve a result. These patterns are etched first (right to left) so the etch can be truncated if the needed results are provided early.
+The code constructs the gcode test pattern starting at the highest speed and progressively higher power. In practice I wanted to use the highest speed and lowest power level to achieve a result. These speed/power patterns are etched first (right to left) so the etch can be truncated if the needed results are provided early.
 
 ## Examples:
 
