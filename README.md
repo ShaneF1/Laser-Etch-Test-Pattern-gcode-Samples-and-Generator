@@ -10,7 +10,9 @@ The gcode samples provided produce an 8x8 grid of 5mm squares at 0.1mm line spac
 
 Note that if creating your own gcode, the power levels can be described as positive values which map to a M3 gcode command or negative values which map to an M4 gcode command. I find the M4 gcode command more useful and indicative as M4 will have your grbl controller dynamically scale laser power in response to the dynamics of your machine movement. The gcode samples provided use negative power values and M4 commands.
 
-Below are examples of tiles test etched using these patterns:
+#Examples:
+
+Below are examples of test tiles etched using these patterns:
 
 ![20221014_190427](https://user-images.githubusercontent.com/7357540/195806169-d4c87ede-ce21-477c-b440-1632457073fb.jpg)
 ![20221014_190454](https://user-images.githubusercontent.com/7357540/195806645-e2bf2510-a7ed-4ea7-99ba-f3e312fb80f7.jpg)
@@ -18,3 +20,7 @@ Below are examples of tiles test etched using these patterns:
 and a sample of what can be done with the right speed/power levels:
 
 ![20221014_190515](https://user-images.githubusercontent.com/7357540/195806285-dd420817-5461-4474-bc8a-a6fb128f28d9.jpg)
+
+#References:
+
+"gcmc - G-Code Meta Compiler" by Vagrearg at https://www.vagrearg.org/content/gcmc
