@@ -29,7 +29,7 @@ To use the code and generate your own customised gcode test patterns:
 
 ## Examples:
 
-Below are examples of painted test tiles etched using these patterns. The first is a red tile painted first with yellow then top coated in white. The second is a yellow tile paint first with blue then top coated in brown. You could just as easily be using the patterns to determine etch density and depth in wood, acrylic or glass.
+Below are examples of painted test tiles etched using this gcode. The first is a red tile painted first with yellow then top coated in white. The second is a yellow tile paint first with blue then top coated in brown. You could just as easily be using the patterns to determine etch density and depth in wood, acrylic or glass.
 
 ![20221014_190427 small](https://user-images.githubusercontent.com/7357540/195807971-7a5dc79e-d842-43bb-8d62-ee8ab9bdc0c2.jpg)
 ![20221014_190454 small](https://user-images.githubusercontent.com/7357540/195808443-a05204f7-d627-4eea-9ae5-0c49cd9e52c6.jpg)
