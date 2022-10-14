@@ -20,7 +20,7 @@ Note that units are NOT set in the g-code so whatever your machine is set to wil
 
 The g-code generator constructs the g-code test pattern starting at the highest speed and progressively higher power. In practice I wanted to use the highest speed and lowest power level to achieve a result. These speed/power patterns are etched first (right to left) so the etch can be truncated if the needed results are provided early. The g-code generator provides for adjustment of row/col count, min/max speed, min/max power, box size and line spacing.
 
-Note that if creating your own g-code, the power levels can be described as positive values which map to a M3 g-code command, or negative values which map to an M4 g-code command. I find the M4 g-code command more useful and indicative as M4 will have your grbl controller dynamically scale laser power in response to the dynamics of your machine movement. The g-code samples provided use negative power values and M4 commands.
+Note that if creating your own g-code, the power levels can be described as positive values which map to a M3 g-code command, or negative values which map to an M4 g-code command. I find the M4 g-code command more useful and indicative as M4 will have your grbl controller dynamically scale laser power in response to the dynamics of your machine movement. This prevents overly deep etching when the laser is stationary during direction reversals. The g-code samples provided use negative power values and M4 commands.
 
 To use the g-code generator and create your own customised g-code test patterns:
 
