@@ -1,6 +1,3 @@
-# Laser-Etch-Test-Patterns-and-Generator
-Laser Etch Test Patterns and the Generator code that made them
-
 I built a more or less DIY CNC laser. In learning how to properly use it I realised I needed some test patterns to help me understand and optimise the speed and power requirements of the laser for different types of material and colours.
 
 All I needed was "just the gcode". I didn't want to install a web server, or python or spend $150 of a piece of software that I would only use a handful of times. I couldn't find either "just the gcode" or a simple way of doing this.
