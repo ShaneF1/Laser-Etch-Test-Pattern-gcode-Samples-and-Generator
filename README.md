@@ -20,6 +20,13 @@ The code constructs the gcode test pattern starting at the highest speed and pro
 
 Note that if creating your own gcode, the power levels can be described as positive values which map to a M3 gcode command, or negative values which map to an M4 gcode command. I find the M4 gcode command more useful and indicative as M4 will have your grbl controller dynamically scale laser power in response to the dynamics of your machine movement. The gcode samples provided use negative power values and M4 commands.
 
+To use the code and generate your own customised gcode test patterns:
+
+* download gcmc from vagrearg and unzip somewhere
+* download "Etch Test Pattern Generator.gcmc" and "Generate.bat" into the dame directory as gcmc
+* edit the last line of "Etch Test Pattern Generator.gcmc" as needed
+* run "Generate.bat"
+
 ## Examples:
 
 Below are examples of painted test tiles etched using these patterns. The first is a red tile painted first with yellow then top coated in white. The second is a yellow tile paint first with blue then top coated in brown. You could just as easily be using the patterns to determine etch density and depth in wood, acrylic or glass.
