@@ -43,3 +43,7 @@ and a sample of what can be done with nearly the right speed/power levels:
 ## References:
 
 "gcmc - G-Code Meta Compiler" by Vagrearg at https://www.vagrearg.org/content/gcmc
+
+## Disclaimer
+
+I use these regularly but make no statement of their suitability for your configuration and environment. Use at your own discretion. I take no responsibility for you, your equipment or the materials you may consume.
