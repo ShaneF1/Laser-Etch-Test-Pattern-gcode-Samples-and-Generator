@@ -25,7 +25,7 @@ Below are examples of test tiles etched using these patterns:
 ![20221014_190427 small](https://user-images.githubusercontent.com/7357540/195807971-7a5dc79e-d842-43bb-8d62-ee8ab9bdc0c2.jpg)
 ![20221014_190454 small](https://user-images.githubusercontent.com/7357540/195808443-a05204f7-d627-4eea-9ae5-0c49cd9e52c6.jpg)
 
-and a sample of what can be done with the right speed/power levels:
+and a sample of what can be done with nearly the right speed/power levels:
 
 ![20221014_190515 small](https://user-images.githubusercontent.com/7357540/195808003-41a7fec6-881b-4220-8b38-f8856e8b330f.jpg)
 
