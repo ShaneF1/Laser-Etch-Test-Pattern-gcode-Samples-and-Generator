@@ -23,7 +23,7 @@ Note that if creating your own gcode, the power levels can be described as posit
 To use the code and generate your own customised gcode test patterns:
 
 * download gcmc from vagrearg and unzip somewhere
-* download "Etch Test Pattern Generator.gcmc" and "Generate.bat" into the dame directory as gcmc
+* download "Etch Test Pattern Generator.gcmc" and "Generate.bat" into the same directory as gcmc
 * edit the last line of "Etch Test Pattern Generator.gcmc" as needed
 * run "Generate.bat"
 
