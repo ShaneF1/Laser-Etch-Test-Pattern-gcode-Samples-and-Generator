@@ -10,17 +10,17 @@ The gcode samples provided produce an 8x8 grid of 5mm squares at 0.1mm line spac
 
 Note that if creating your own gcode, the power levels can be described as positive values which map to a M3 gcode command or negative values which map to an M4 gcode command. I find the M4 gcode command more useful and indicative as M4 will have your grbl controller dynamically scale laser power in response to the dynamics of your machine movement. The gcode samples provided use negative power values and M4 commands.
 
-#Examples:
+# Examples:
 
 Below are examples of test tiles etched using these patterns:
 
-![20221014_190427](https://user-images.githubusercontent.com/7357540/195806169-d4c87ede-ce21-477c-b440-1632457073fb.jpg)
-![20221014_190454](https://user-images.githubusercontent.com/7357540/195806645-e2bf2510-a7ed-4ea7-99ba-f3e312fb80f7.jpg)
+![20221014_190427 small](https://user-images.githubusercontent.com/7357540/195807971-7a5dc79e-d842-43bb-8d62-ee8ab9bdc0c2.jpg)
+![20221014_190454 small](https://user-images.githubusercontent.com/7357540/195807975-25ec470a-9101-4124-af0a-bd6b7fdb5027.jpg)
 
 and a sample of what can be done with the right speed/power levels:
 
-![20221014_190515](https://user-images.githubusercontent.com/7357540/195806285-dd420817-5461-4474-bc8a-a6fb128f28d9.jpg)
+![20221014_190515 small](https://user-images.githubusercontent.com/7357540/195808003-41a7fec6-881b-4220-8b38-f8856e8b330f.jpg)
 
-#References:
+# References:
 
 "gcmc - G-Code Meta Compiler" by Vagrearg at https://www.vagrearg.org/content/gcmc
