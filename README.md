@@ -16,7 +16,7 @@ Note that if creating your own gcode, the power levels can be described as posit
 Below are examples of tiles test etched using these patterns:
 
 ![20221014_190427](https://user-images.githubusercontent.com/7357540/195806169-d4c87ede-ce21-477c-b440-1632457073fb.jpg)
-![20221014_190454](https://user-images.githubusercontent.com/7357540/195806199-dcfd0344-cf8e-4b34-8a07-207240c99d9f.jpg)
+![20221014_190454](https://user-images.githubusercontent.com/7357540/195806645-e2bf2510-a7ed-4ea7-99ba-f3e312fb80f7.jpg)
 
 and a sample of what can be done with the right speed/power levels:
 
