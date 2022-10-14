@@ -46,4 +46,4 @@ and a sample of what can be done with nearly the right speed/power levels:
 
 ## Disclaimer
 
-I use these regularly but make no statement of their suitability for your configuration and environment. Use at your own discretion. I take no responsibility for you, your equipment or the materials you may consume.
+I use these regularly but make no statement of their suitability for your configuration and environment. Use at your own discretion. I take no responsibility for you, your equipment or the materials you may consume. You MUST verify the g-code is appropriate for your configuration.
