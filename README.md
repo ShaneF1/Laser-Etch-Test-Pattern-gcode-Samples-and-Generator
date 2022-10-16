@@ -42,7 +42,7 @@ and a sample of what can be done with nearly the right speed/power levels:
 
 ## References:
 
-"gcmc - G-Code Meta Compiler" by Vagrearg at https://www.vagrearg.org/content/gcmc
+"gcmc - G-Code Meta Compiler" at https://www.vagrearg.org/content/gcmc
 
 ## Disclaimer
 
